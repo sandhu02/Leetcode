@@ -2,7 +2,7 @@ class Solution {
 public:
     int maxProfit(vector<int>& prices) {
         if (prices.empty()) {
-        return 0;  // Handle the case when the vector is empty
+        return 0;  
         }
 
         int minPrice = prices[0];
