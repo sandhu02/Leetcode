@@ -2,10 +2,10 @@ class Solution {
 public:
     vector<vector<int>> threeSum(vector<int>& nums) {
         vector<vector<int>> indexArray;
-        sort(nums.begin(), nums.end()); // Sorting the input vector
+        sort(nums.begin(), nums.end()); 
 
         for (int i = 0; i < nums.size(); i++) {
-            // Skip duplicate elements
+            
             if (i > 0 && nums[i] == nums[i - 1]) {
                 continue;
             }
@@ -18,21 +18,19 @@ public:
                 if (sum == 0) {
                     vector<int> temp = {nums[i], nums[left], nums[right]};
                     indexArray.push_back(temp);
-
-                    // Skip duplicate elements
                     while (left < right && nums[left] == nums[left + 1]) {
                         left++;
                     }
                     while (left < right && nums[right] == nums[right - 1]) {
                         right--;
                     }
-
-                    // Move pointers to find next unique elements
                     left++;
                     right--;
-                } else if (sum < 0) {
+                } 
+                else if (sum < 0) {
                     left++;
-                } else {
+                } 
+                else{
                     right--;
                 }
             }
